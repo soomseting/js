@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>할일 삭제 기능은 아직 구현하지 마세요</h3>
+    <h3>input은 지우는 게 아니라 display를 제어하세요</h3>
+    <h3>할일 목록 만들기</h3>
+
+
+    <input type="text" placeholder="이름을 입력하세요" class="name">
+    <button type="button" id="btn1">확인</button>
+    <div class="box"></div><br>
+    <input type="text" placeholder="당신의 할 일을 정하세요" class="work">
+    <ul class="list2" style="display: none;"></ul>
+    <button type="button" id="btn2">확인</button>
+
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+
+        var names = document.querySelector(".name");
+        var work = document.querySelector(".work");
+        var box = document.querySelector(".box");
+        var list2 = document.querySelector(".list2");
+
+        btn1.onclick = function () {
+            var p = document.createElement("p");
+
+            p.innerHTML = "<strong>" + names.value + "님 안녕하세요</strong>";
+            names.style.display = "none";
+            box.style.display = "block";
+            btn1.style.display = "none";
+            
+            box.appendChild(p);
+
+        };
+        btn2.onclick = function () {
+            var li = document.createElement("li");
+            var but = document.createElement("button");
+            
+            li.innerHTML = work.value;
+            but.innerHTML = "x";
+            work.style.display = "none";
+            list2.style.display = "block";
+
+            list2.appendChild(li);
+            li.appendChild(but);
+        };
+
+
+    </script>
+</body>
+
+</html>

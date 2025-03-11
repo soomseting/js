@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table {border-spacing: 0; border-collapse: collapse;}
+        thead th, td {
+            border: 1px solid black;
+        }
+    </style>
+    
+    
+    
+    <button type="button" id="addLists">5개추가하기</button>
+    <button type="button" id="addList">1개추가하기</button>
+    
+    <table>
+        <thead>
+			<tr>
+				<th>교시</th>
+				<th>훈련과목</th>
+				<th>담당자</th>
+				<th>훈련내용</th>
+			</tr>
+        </thead>
+        <tbody class="todoList">
+            <tr>
+                <td><input type="text" size="3"></td>
+                <td><input type="text"></td>
+                <td><input type="text" size="5"></td>
+                <td><input type="text"></td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <script>
+        var one = document.getElementById("addList");
+        var five = document.getElementById("addLists");
+        var list = document.querySelector(".todoList");
+
+        // one.onclick = function(){
+        //     var tr = document.createElement("tr");
+        //     var td = document.createElement("td");
+        //     var td2 = document.createElement("td");
+        //     var td3 = document.createElement("td");
+        //     var td4 = document.createElement("td");
+        //     var inbox = document.createElement("input");
+        //     var inbox2 = document.createElement("input");
+        //     var inbox3 = document.createElement("input");
+        //     var inbox4 = document.createElement("input");
+
+        //     inbox.style.width = "49px";
+        //     inbox3.style.width = "63px";
+
+        //     list.appendChild(tr);
+        //     tr.appendChild(td);
+        //     tr.appendChild(td2);
+        //     tr.appendChild(td3);
+        //     tr.appendChild(td4);
+            
+        //     td.appendChild(inbox);
+        //     td2.appendChild(inbox2);
+        //     td3.appendChild(inbox3);
+        //     td4.appendChild(inbox4);
+        // };
+
+        one.onclick = function(){
+            // var tr = document.createElement("tr");
+            first();            
+        }
+
+        five.onclick = function(){
+            for(var i = 0; i<5; i++){
+                first();
+            }
+        }
+
+        function first() {
+            var tr = document.createElement("tr");
+            for(var i =0; i<4; i++){
+                var td = document.createElement("td");
+                var inbox = document.createElement("input");
+                td.appendChild(inbox);
+                tr.appendChild(td);
+                list.appendChild(tr);
+
+                
+
+            }
+        }
+    </script>
+
+</body>
+</html>
