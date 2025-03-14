@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>토글버튼 - 하나의 버튼으로 여러작업을 하게되는 버튼</h3>
+    
+    <button type="button" id="btn" class="btn btn-default">버튼</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+        // console.log(btn.class); // x
+        // console.log(btn.className);
+        // btn.className = "sdfsdf";
+        
+        // console.log(btn.classList); //클래스 명칭을 리스트반환
+
+        //btn.classList.add("내가추가한클래스");//
+        // btn.classList.remove("btn"); //btn클래스 지움
+        // console.log(btn.classList.contains("btn")); //btn클래스 있으면 true반환, 없으면 false 반환
+        // btn.classList.toggle("btn"); //btn이름이 있으면 삭제해주고, 없으면 추가해주는 함수
+        
+    </script>
+
+    <h3 class="title">1. 클래스를 이용해서 하나의 버튼을 토글형태</h3>
+    <button type="button" id="myBtn" class="a">토글버튼</button>
+
+    <script>
+        var title = document.querySelector(".title");
+        var myBtn = document.getElementById("myBtn");
+
+        myBtn.onclick = function(){
+            if(myBtn.classList.contains("x")){//x가 있었으면
+                title.style.color = "black";
+            }else{ //x가 없었으면
+                title.style.color = "red";
+            }
+            myBtn.classList.toggle("x");//x가 있으면 삭제, 없으면 x를 추가
+        }
+    </script>
+
+    <hr>
+    <style>
+        .example.active{
+            color : red;
+        }
+    </style>
+
+    <h3 class="example active">2. 클래스 자체에 디자인을 주고, 이 클래스를 옮겨가면서 사용하는 방식</h3>
+    <button type="button" id="toggleBtn">토글버튼</button>
+    <script>
+        var example = document.querySelector(".example");
+        var toggleBtn = document.getElementById("toggleBtn");
+        toggleBtn.onclick = function(){
+            example.classList.toggle("active");
+        }  
+    </script>
+</body>
+</html>

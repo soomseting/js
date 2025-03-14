@@ -70,13 +70,14 @@
         // };
 
         one.onclick = function(){
-            // var tr = document.createElement("tr");
-            first();            
+            // first();
+            second();
         }
 
         five.onclick = function(){
             for(var i = 0; i<5; i++){
-                first();
+                // first();
+                second();
             }
         }
 
@@ -88,10 +89,17 @@
                 td.appendChild(inbox);
                 tr.appendChild(td);
                 list.appendChild(tr);
-
-                
-
             }
+        }
+
+
+        function second(){
+            var tr = document.createElement("tr");
+            tr.innerHTML = '<td><input type="text" size ="3"></td>'+
+                            '<td><input type="text"></td>'+
+                            '<td><input type="text" size ="5"></td>'+
+                            '<td><input type="text"></td>';
+            list.appendChild(tr);
         }
     </script>
 

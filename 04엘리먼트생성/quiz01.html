@@ -51,9 +51,56 @@
 
             list2.appendChild(li);
             li.appendChild(but);
+            
         };
+        todoButton.onclick = function(){
+            todo.value = "";//공백으로
+
+            //upbtn
+            var upBtn = document.createElement("button");
+            upBtn.innerHTML = "up";
+            upBtn.addEventListener("click" , up);
+            li.appendChild(upBtn);
+            
+            //downbtn
+            var downBtn = document.createElement("button");
+            downBtn.innerHTML = "down";
+            downBtn.addEventListener("click",down);
+            li.appendChild(downBtn);
 
 
+            todoList.appendChild(li);//ul자식으로 li
+        }
+        function del(){
+            //removeChild
+
+            // todoList.removeChild(this.parentElement);
+            this.parentElement.remove();
+        }
+        function up(){
+            var current = this.parentElement;
+            var prev = current.previousElementSibling;
+
+            if(prev == null){
+                return;
+            }
+            if(confirm('이동하시겠습니까?')){
+
+            }
+            todoList.insertBefore(current,prev);
+        }
+        
+        function down(){
+            var current = this.parentElement;
+            var next = current.nextElementSibling;
+            if(next ==null){
+                return;
+            }
+            if(confirm('이동하시겠습니까?')){
+                todoList.insertBefore(next,current);
+            }
+            insertBefore(current, next);
+        }
     </script>
 </body>
 
