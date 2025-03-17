@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="clock">
+        <h3>00:00:00</h3>
+    </div>
+
+    <script>
+        var clock = document.querySelector(".clock h3");
+
+        function createTime() {
+            var time = new Date();
+            var hour = time.getHours();
+            var minute = time.getMinutes();
+            var second = time.getSeconds();
+
+            var now = (hour < 10 ? "0" + hour : hour) + ":" + (minute < 10 ? "0" + minute : minute) + ":" + (second < 10 ? "0" + second : second);
+            clock.innerHTML = now;
+        }
+
+
+        (function () {
+            window.setInterval(createTime, 1000);
+        })();
+    </script>
+</body>
+
+</html>
